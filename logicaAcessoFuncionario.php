@@ -10,7 +10,7 @@ function funcionarioEstaLogado() {
 function verificaFuncionario() {
 	if(!funcionarioEstaLogado()) {
 		$_SESSION["danger"] = "Você não possui acesso a essa funcionalidade!";
-		header("Location: index.php");
+		header("Location: loginFuncionarioFormulario.php");
 		die();
 	}
 }

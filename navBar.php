@@ -22,7 +22,7 @@
     <div class="btn btn-outline-dark btn-floating m-1">
         <img src="img/iconPerfil.png" width="40" class="d-inline-block align-center" alt="">
         <br>
-        <a class="navbar-brand text-white align-center mb-0 h1" href="index.php">FAZER LOGIN</a>
+        <a class="navbar-brand text-white align-center mb-0 h1" href="loginFuncionarioFormulario.php">FAZER LOGIN</a>
     </div>
     <div class="carrinho">
         <img src="img/iconCarrinho.png" width="40" class="d-inline-block align-center" alt="">
@@ -45,13 +45,74 @@
         body{
             background-image: url('img/background.png');
         }
-        
+
+        .infprod{
+            background: #FFB800;
+            text-align: left;
+            padding-left: 10px;
+            color: white;
+        }
+
+        .tableprod{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border: 4px solid #FFB800;
+        }
+
         .tableform{
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border-radius: 60px 60px 60px 60px;
         }
 
+        .media-scroller {
+        --_spacer: var(--size-3);
+        display: grid;
+        gap: var(--_spacer);
+        grid-auto-flow: column;
+        grid-auto-columns: 21%;
+
+        padding: 0 var(--_spacer) var(--_spacer);
+
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        }
+
+        .media-scroller--with-groups {
+        grid-auto-columns: 80%;
+        }
+
+        .media-group {
+        display: grid;
+        gap: var(--_spacer);
+        grid-auto-flow: column;
+        }
+
+        .media-element {
+        display: grid;
+        grid-template-rows: min-content;
+        gap: var(--_spacer);
+        padding: 15px;
+        background: var(--surface-2);
+        border-radius: var(--radius-2);
+        box-shadow: var(--shadow-2);
+        color: white;
+        }
+
+        .media-element > img {
+        inline-size: 100%;
+        height: 295px;
+        object-fit: cover;
+        }
+
+        .snaps-inline {
+        scroll-snap-type: inline mandatory;
+        scroll-padding-inline: var(--_spacer, 1rem);
+        }
+
+        .snaps-inline > * {
+        scroll-snap-align: start;
+        }
         .linha-vertical{
             height: 500px;
             border-left: 4px solid;
@@ -64,7 +125,7 @@
             border-color: #FFB800;
         }
 
-        .btn-primary{
+        .btn-danger{
             background-color: #FFB800;
         }
 		.principal {
@@ -75,6 +136,7 @@
 		table {
 			text-align: left;
 		}
+
 		
 	</style>
 

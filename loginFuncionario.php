@@ -7,7 +7,7 @@ $funcionario = buscaFuncionario($conexao, $_POST["email"], $_POST["senha"]);
 
 if($funcionario == null) {
 	$_SESSION["danger"] = "Usuário ou senha inválido!";
-	header("Location: index.php");
+	header("Location: loginFuncionarioFormulario.php");
 } else {
 	$_SESSION["success"] = "Usuário logado com sucesso!";
 	logaFuncionario($funcionario["email"]);
