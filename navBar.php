@@ -27,7 +27,7 @@
     <div class="carrinho">
         <img src="img/iconCarrinho.png" width="40" class="d-inline-block align-center" alt="">
         <br>
-        <a class="navbar-brand text-white mb-0 h1" href="#">CARRINHO</a>
+        <a class="navbar-brand text-white mb-0 h1" href="produtoFormulario.php">CARRINHO</a>
     </div>
 </a>
 </nav>
@@ -51,12 +51,14 @@
             text-align: left;
             padding-left: 10px;
             color: white;
+            /* width: 268px; */
         }
 
         .tableprod{
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
             border: 4px solid #FFB800;
+            /* width: 268px; */
         }
 
         .tableform{
@@ -128,6 +130,7 @@
         .btn-danger{
             background-color: #FFB800;
         }
+        
 		.principal {
             padding: 40px 15px;
 			text-align: center;

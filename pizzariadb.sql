@@ -41,7 +41,8 @@ create table tb_produto
     nome varchar(100) not null,
     ingrediente varchar(120) not null,
     valor decimal not null,
-    disponibilidade boolean not null
+    categoriaid int,
+    disponibilidade boolean default false not null
 );
 
 create table tb_cliente
@@ -59,6 +60,12 @@ create table tb_cliente
     complemento varchar (80),
     email varchar(60) not null,
     senha varchar(120) not null
+);
+
+create table tb_categoria
+(
+	cdcategoria int auto_increment primary key,
+    nome varchar(100) not null
 );
 
 create table tb_pedido
