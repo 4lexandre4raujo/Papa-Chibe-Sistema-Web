@@ -85,14 +85,7 @@ input:checked + .slider:before {
 						<td>ingrediente: </td>
 						<td colspan="2"><textarea class="form-control" name="ingrediente" rows="3" style="resize: none;"></textarea></td>
 					</tr>
-
 					<tr>
-						<td></td>
-						<td colspan="2">
-							<input type="checkbox" name="disponibilidade" value="true"> Disponibilidade
-						</td>
-					</tr>
-					<!-- <tr>
 						<td>Disponibilidade</td>
 						<td colspan="2">
 						<label class="switch">
@@ -101,7 +94,7 @@ input:checked + .slider:before {
 						</label>
 							
 						</td>
-					</tr> -->
+					</tr>
 					
 					<tr>
 						<td>Categoria: </td>
@@ -109,7 +102,7 @@ input:checked + .slider:before {
 							<select name="categoriaid" class="form-control">
 								<?php foreach ($categorias as $categoria) {
 								?>
-									<option value="<?=$categoria['categoriaid']?>"><?=$categoria['nome']?></option>
+									<option value="<?=$categoria['cdcategoria']?>"><?=$categoria['nome']?></option>
 									<!-- <input type="radio" name="Categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?><br> -->
 								<?php
 								}

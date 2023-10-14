@@ -12,19 +12,19 @@
     <!-- Section: Social media -->
     <section class="mb-4">
         <!-- Instagram -->
-        <a class="btn" href="https://www.instagram.com/papachibe__/" role="button"
+        <a class="btn" href="https://www.instagram.com/papachibe__/" role="button" target="_blank"
           ><img src="img/iconInstagram.png" width="40" class="d-inline-block align-top" alt="">
           <i class="fab fa-instagram"></i
         ></a>
 
         <!-- Facebook -->
-        <a class="btn" href="https://www.facebook.com/papachibepizzaburguerdelivry/?locale=pt_BR" role="button"
+        <a class="btn" href="https://www.facebook.com/papachibepizzaburguerdelivry/?locale=pt_BR" role="button" target="_blank"
             ><img src="img/iconFacebook.png" width="40" class="d-inline-block align-top" alt="">
             <i class="fab fa-facebook-f"></i
         ></a>
 
         <!-- WhatsApp -->
-        <a class="btn" href="https://api.whatsapp.com/send?phone=5591984296466" role="button"
+        <a class="btn" href="https://api.whatsapp.com/send?phone=5591984296466" role="button" target="_blank"
             ><img src="img/iconWhatsApp.png" width="40" class="d-inline-block align-top" alt="">
             <i class="fab fa-whatsapp"></i
         ></a>
@@ -56,8 +56,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2023 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">papachibe.com</a>
+    © Copyright 2023
+    <a class="text-white" href="https://mdbootstrap.com/">PapaChibe</a>
   </div>
   <!-- Copyright -->
 </footer>

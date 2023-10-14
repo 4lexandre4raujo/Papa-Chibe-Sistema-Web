@@ -24,16 +24,16 @@ unset($_SESSION["success"]);
           <img src="img/produto1.png" alt="">
           <p class="title">pizza calabresa</p>
           <p class="title">80,00</p>
-          <a colspan="1"><button class="btn btn-danger"><a href="produtoAlteraFormulario.php?id=<?=$produto['id']?>"></a>Editar Produto</button></a>
+          <button class="btn btn-danger"><a href="produtoAlteraFormulario.php?id=<?=$produto['id']?>"></a>Editar Produto</button>
         </div>
       </div>
     </div>
-
+</table>
     <table>
     <br>
     <br>
     <div class="infprod">
-      SABORES DISPONÍVEIS
+      PRODUTOS DISPONÍVEIS
     </div>
     <div class="tableprod">
       <div class="media-scroller snaps-inline">
@@ -49,14 +49,20 @@ foreach($produtos as $produto) {
         <div class="media-element">
           <img src="img/produto1.png" alt="">
           <p class="title"><?=$produto["nome"]?></p>
-          <p class="title"><?=$produto["valor"]?></p>
-          <a colspan="1"><button class="btn btn-danger"><a href="produtoAlteraFormulario.php?id=<?=$produto['id']?>"></a>Editar Produto</button></a>
+          <p class="title">R$ <?=$produto["valor"]?></p>
+          <button class="btn btn-danger"><a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>"></a>Editar Produto</button>
+          <br>
+          <form action="logicaRemoveProduto.php" method="post">
+            <input type="hidden" name="cdproduto" value="<?=$produto['cdproduto']?>">
+            <button class="btn btn-danger">Remover</button>
+			    </form>
         </div>
+        <?php
+}
+?>
       </div>
     </div>
 </table>    
-<?php
-}
-?>
+
 </table>
 <?php include("rodape.php") ?> 
