@@ -10,12 +10,12 @@ $ingrediente = $_POST["ingrediente"];
 $categoriaid = $_POST["categoriaid"];
 
 if(array_key_exists('disponibilidade', $_POST)) {
-	$usado = "true";
+	$disponibilidade = "true";
 } else {
-	$usado = "false";
+	$disponibilidade = "false";
 }
 
-if(alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $categoriaid, $disponibilidade)) {
+if(alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)) {
 ?>
 
 	<p class="text-success">

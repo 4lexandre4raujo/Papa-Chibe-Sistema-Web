@@ -50,7 +50,9 @@ foreach($produtos as $produto) {
           <img src="img/produto1.png" alt="">
           <p class="title"><?=$produto["nome"]?></p>
           <p class="title">R$ <?=$produto["valor"]?></p>
-          <button class="btn btn-danger"><a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>"></a>Editar Produto</button>
+          <a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>">
+            <button class="btn btn-danger">Editar Produto</button>
+          </a>
           <br>
           <form action="logicaRemoveProduto.php" method="post">
             <input type="hidden" name="cdproduto" value="<?=$produto['cdproduto']?>">

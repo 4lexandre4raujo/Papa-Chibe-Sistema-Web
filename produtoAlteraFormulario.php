@@ -1,4 +1,5 @@
-<?php include("navBar.php");
+<?php
+include("navBar.php");
 include("conexao.php");
 include("bancoCategoria.php");
 include("bancoProduto.php");
@@ -12,7 +13,7 @@ $disponibilidade = $produto['disponibilidade'] ? "checked='checked'" : "";
 ?>
 
 <h1>Alteração de Produto</h1>
-<form action="produtoAlteraFormulario.php" method="post">
+<form action="logicaAlteraProduto.php" method="post">
 	<input type="hidden" name="cdproduto" value="<?=$produto['cdproduto']?>">
 	<table class="table">
 		<tr>

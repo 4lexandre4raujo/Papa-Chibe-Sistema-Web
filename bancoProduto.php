@@ -38,7 +38,7 @@ function buscaProduto($conexao, $cdproduto) {
 }
 
 //Função para alterar o produto
-function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid,) {
+function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid) {
 	$query = "update tb_produto set nome='{$nome}', valor={$valor}, ingrediente='{$ingrediente}',  disponibilidade={$disponibilidade}, 
 	categoriaid={$categoriaid} where cdproduto={$cdproduto}";
 

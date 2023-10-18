@@ -31,7 +31,7 @@ if(cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha)) 
 
 ?>
 <div align="center">
-	<a href="index.php"><button class="btn btn-primary">Fazer Login</button></a>
+	<a href="loginFuncionarioFormulario.php"><button class="btn btn-primary">Fazer Login</button></a>
 </div>
 
 
