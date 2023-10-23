@@ -1,6 +1,5 @@
 <?php
 include("navBar.php");
-include("logicaAcessoFuncionario.php");
 
 
 if(isset($_SESSION["danger"])) { ?>

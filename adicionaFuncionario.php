@@ -27,7 +27,6 @@ if(cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha)) 
 <?php
 }
 
-//mysqli_close($conexao);
 
 ?>
 <div align="center">

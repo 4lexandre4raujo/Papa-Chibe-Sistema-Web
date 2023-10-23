@@ -7,7 +7,6 @@ include("bancoProduto.php");
 $categorias = listaCategorias($conexao);
 $cdproduto = $_GET['cdproduto'];
 $produto = buscaProduto($conexao, $cdproduto);
-//Short if (Operador ternário)
 $disponibilidade = $produto['disponibilidade'] ? "checked='checked'" : "";
 
 ?>

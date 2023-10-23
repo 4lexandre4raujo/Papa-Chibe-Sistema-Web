@@ -1,13 +1,13 @@
 <?php
 
-//Insere categorias
+//Função Insere categorias
 function insereCategoria($conexao, $nome){
 	$query = "insert into tb_categoria (nome) values ('{$nome}')";
 
 	return mysqli_query($conexao, $query);
 }
 
-//Lista categorias
+//Função Lista categorias
 function listaCategorias($conexao){
 	$categorias = array();
 	$query = "select * from tb_categoria;";

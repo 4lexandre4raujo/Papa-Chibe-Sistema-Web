@@ -41,7 +41,7 @@ include("bancoFuncionario.php");
 					<tr>
 						<td colspan="1"><button class="btn btn-primary" type="submit">Cadastrar</button></td>
 					</tr>
-					<td colspan="2"><p class="link">Já possui conta?<a href="index.php" style="color: #FFB800;"> Fazer Login.</a></p></td>
+					<td colspan="2"><p class="link">Já possui conta?<a href="loginFuncionarioFormulario.php" style="color: #FFB800;"> Fazer Login.</a></p></td>
 
 				</table>
 
@@ -49,7 +49,5 @@ include("bancoFuncionario.php");
 			</form>
     </tr>
 </table>
-
-			
 
 <?php include("rodape.php") ?>

@@ -35,8 +35,6 @@ if(insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categ
 <?php
 }
 
-//mysqli_close($conexao);
-
 ?>
 
 <div align="center">

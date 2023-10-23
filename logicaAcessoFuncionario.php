@@ -6,7 +6,6 @@ function funcionarioEstaLogado() {
 	return isset($_SESSION["funcionario_logado"]);
 }
 
-//Verifica se o usuário está logado
 function verificaFuncionario() {
 	if(!funcionarioEstaLogado()) {
 		$_SESSION["danger"] = "Você não possui acesso a essa funcionalidade!";

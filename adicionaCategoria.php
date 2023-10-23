@@ -26,8 +26,6 @@ if(insereCategoria($conexao, $nome)) {
 <?php
 }
 
-//mysqli_close($conexao);
-
 ?>
 <div align="center">
 	<a href="produtoFormulario.php"><button class="btn btn-primary">Voltar</button></a>

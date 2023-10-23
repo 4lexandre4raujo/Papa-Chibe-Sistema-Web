@@ -1,7 +1,7 @@
-<?php include("navBar.php");
+<?php 
+include("navBar.php");
 include("conexao.php");
 include("bancoCategoria.php");
-include("logicaAcessoFuncionario.php");
 
 verificaFuncionario();
 
@@ -70,55 +70,55 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 </style>
-			<h1>Formulário de Produto</h1>
-			<form action="adicionaProduto.php" method="post">
-				<table class="table">
-					<tr>
-						<td>Nome: </td>
-						<td colspan="2"><input class="form-control" type="text" name="nome"></td>
-					</tr>
-					<tr>
-						<td>Valor: </td>
-						<td colspan="2"><input class="form-control" type="number" name="valor" step="0.01"></td>
-					</tr>
-					<tr>
-						<td>ingrediente: </td>
-						<td colspan="2"><textarea class="form-control" name="ingrediente" rows="3" style="resize: none;"></textarea></td>
-					</tr>
-					<tr>
-						<td>Disponibilidade</td>
-						<td colspan="2">
-						<label class="switch">
-							<input type="checkbox" name="disponibilidade" value="true">
-							<span class="slider round"></span>
-						</label>
-							
-						</td>
-					</tr>
-					
-					<tr>
-						<td>Categoria: </td>
-						<td>
-							<select name="categoriaid" class="form-control">
-								<?php foreach ($categorias as $categoria) {
-								?>
-									<option value="<?=$categoria['cdcategoria']?>"><?=$categoria['nome']?></option>
-									<!-- <input type="radio" name="Categoria_id" value="<?=$categoria['id']?>"> <?=$categoria['nome']?><br> -->
-								<?php
-								}
-								?>
-							</select>
-							<td><a href="categoriaProduto.php">Nova Categoria</a></td>
-						</td>
-					</tr>
-					<tr>
-						<td colspan="3"><button class="btn btn-primary" type="submit">Cadastrar</button></td>
-					</tr>
+<h1>Formulário de Produto</h1>
+<form action="adicionaProduto.php" method="post">
+	<table class="table">
+		<tr>
+			<td>Nome: </td>
+			<td colspan="2"><input class="form-control" type="text" name="nome"></td>
+		</tr>
+		<tr>
+			<td>Valor: </td>
+			<td colspan="2"><input class="form-control" type="number" name="valor" step="0.01"></td>
+		</tr>
+		<tr>
+			<td>ingrediente: </td>
+			<td colspan="2"><textarea class="form-control" name="ingrediente" rows="3" style="resize: none;"></textarea></td>
+		</tr>
+		<tr>
+			<td>Disponibilidade</td>
+			<td colspan="2">
+			<label class="switch">
+				<input type="checkbox" name="disponibilidade" value="true">
+				<span class="slider round"></span>
+			</label>
+				
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Categoria: </td>
+			<td>
+				<select name="categoriaid" class="form-control">
+					<?php foreach ($categorias as $categoria) {
+					?>
+						<option value="<?=$categoria['cdcategoria']?>"><?=$categoria['nome']?></option>
+						<?=$categoria['id']?>"> <?=$categoria['nome']?><br>
+					<?php
+					}
+					?>
+				</select>
+				<td><a href="categoriaProduto.php">Nova Categoria</a></td>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"><button class="btn btn-primary" type="submit">Cadastrar</button></td>
+		</tr>
 
-				</table>
+	</table>
 
-	
-			</form>
+
+</form>
 
 <?php include("rodape.php") ?>
 		

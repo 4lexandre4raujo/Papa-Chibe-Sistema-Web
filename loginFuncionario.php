@@ -14,5 +14,3 @@ if($funcionario == null) {
 	header("Location: index.php");
 }
 die();
-
-//var_dump($funcionario);

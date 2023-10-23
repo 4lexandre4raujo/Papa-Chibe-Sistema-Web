@@ -3,7 +3,6 @@ include("navBar.php");
 include("conexao.php");
 include("bancoFuncionario.php");
 include("bancoProduto.php"); 
-include("logicaAcessoFuncionario.php");
 
 if (isset($_SESSION["success"])) { ?>
 	<p class="alert-success"><?=$_SESSION["success"]?></p>
@@ -21,10 +20,7 @@ unset($_SESSION["success"]);
     <div class="tableprod">
       <div class="media-scroller snaps-inline">
         <div class="media-element">
-          <img src="img/produto1.png" alt="">
-          <p class="title">pizza calabresa</p>
-          <p class="title">80,00</p>
-          <button class="btn btn-danger"><a href="produtoAlteraFormulario.php?id=<?=$produto['id']?>"></a>Editar Produto</button>
+          
         </div>
       </div>
     </div>
@@ -50,6 +46,9 @@ foreach($produtos as $produto) {
           <img src="img/produto1.png" alt="">
           <p class="title"><?=$produto["nome"]?></p>
           <p class="title">R$ <?=$produto["valor"]?></p>
+<?php
+if(funcionarioEstaLogado()) {
+?>
           <a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>">
             <button class="btn btn-danger">Editar Produto</button>
           </a>
@@ -59,9 +58,14 @@ foreach($produtos as $produto) {
             <button class="btn btn-danger">Remover</button>
 			    </form>
         </div>
-        <?php
+<?php }
+else { ?>
+          <a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>">
+            <button class="btn btn-danger">Adicionar ao Carrinho</button>
+          </a>  
+<?php
 }
-?>
+}?>
       </div>
     </div>
 </table>    
