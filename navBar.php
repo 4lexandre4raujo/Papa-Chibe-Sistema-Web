@@ -28,7 +28,7 @@ else { ?>
 }
 ?>
     
-    <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="#">CARDÁPIO</a>
+    <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listaCategoria.php">CARDÁPIO</a>
 
 <?php
 if(!funcionarioEstaLogado()) {
@@ -56,7 +56,7 @@ else { ?>
         <br>
         <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px">Não é <?=funcionarioLogado()?>?</a>
         <br>
-        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px" href="logoutFuncionario.php">SAIR</a>
+        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px" href="logoutFuncionario.php"><i><u>SAIR</u></i></a>
     </div>
 <?php
 }

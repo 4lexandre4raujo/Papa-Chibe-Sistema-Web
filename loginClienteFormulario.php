@@ -30,7 +30,7 @@ else { ?>
             <td class="linha-vertical"></td>
 
             <td class="tableform">
-                <h1 style="color: #FFB800;">Login Funcionário</h1>
+                <h1 style="color: #FFB800;">Login Cliente</h1>
 
                 <form action="loginFuncionario.php" method="post">
                     <table class="table" style="color: white;">
