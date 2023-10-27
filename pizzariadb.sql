@@ -40,7 +40,7 @@ create table tb_produto
 	cdproduto int auto_increment primary key,
     nome varchar(100) not null,
     ingrediente varchar(120) not null,
-    valor decimal not null,
+    valor decimal(4,2) not null,
     categoriaid int,
     disponibilidade boolean default false not null
 );

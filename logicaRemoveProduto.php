@@ -2,8 +2,6 @@
 include("navbar.php");
 include("conexao.php");
 include("bancoProduto.php");
-include("logicaAcessoFuncionario.php");
-
 
 $cdproduto = $_POST['cdproduto'];
 removeProduto($conexao, $cdproduto);

@@ -16,14 +16,14 @@ include("logicaAcessoFuncionario.php");
 		<!-- As a link -->
 <nav class="navbar navbar-light" style="background-color: #FFB800;">
 <a class="navbar-brand" href="index.php">
-    <img src="img/navBarLogo.png" width="110" height="60" class="d-inline-block align-top" alt="">
+    <img src="img/navBarLogo.png" width="140" height="80" class="d-inline-block align-top" alt="">
 <?php
 if(!funcionarioEstaLogado()) {
 ?>
     <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="#">FAZER PEDIDO</a>
 <?php }
 else { ?>
-    <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="#">LISTA PRODUTOS</a>
+    <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="listaProduto.php">LISTA PRODUTOS</a>
 <?php
 }
 ?>
@@ -68,7 +68,7 @@ if(!funcionarioEstaLogado()) {
     <div class="carrinho">
         <img src="img/iconCarrinho.png" width="30" class="d-inline-block align-center" alt="">
         <br>
-        <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="produtoFormulario.php">CARRINHO</a>
+        <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="">CARRINHO</a>
     </div>
     
 <?php }

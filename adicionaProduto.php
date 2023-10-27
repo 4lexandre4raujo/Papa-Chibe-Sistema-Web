@@ -2,7 +2,6 @@
 include("navBar.php");
 include("conexao.php");
 include("bancoProduto.php");
-include("logicaAcessoFuncionario.php");
 
 verificaFuncionario();
 

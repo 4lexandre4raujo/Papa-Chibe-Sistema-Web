@@ -60,13 +60,13 @@ if(funcionarioEstaLogado()) {
         </div>
 <?php }
 else { ?>
-          <a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>">
+          <a href="">
             <button class="btn btn-danger">Adicionar ao Carrinho</button>
           </a>  
+      </div>
 <?php
 }
 }?>
-      </div>
     </div>
 </table>    
 
