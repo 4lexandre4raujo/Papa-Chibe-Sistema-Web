@@ -1,7 +1,7 @@
 <?php
 include("navBar.php");
 include("conexao.php");
-include("bancoFuncionario.php");
+include("bancoUsuario.php");
 
 $nome = $_POST["nome"];
 $sobrenome = $_POST["sobrenome"];

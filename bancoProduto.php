@@ -36,6 +36,18 @@ function buscaProduto($conexao, $cdproduto) {
 
 	return $produto;
 }
+//Função Lista produto
+function listaProduto($conexao){
+	$produtos = array();
+	$query = "select * from tb_produto;";
+	$resultado = mysqli_query($conexao, $query);
+
+	while($produto = mysqli_fetch_assoc($resultado)) {
+		array_push($produtos, $produto);
+	}
+
+	return $produtos;
+}
 
 //Função para alterar o produto
 function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid) {

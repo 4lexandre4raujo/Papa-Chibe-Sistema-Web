@@ -16,7 +16,7 @@ if(funcionarioEstalogado()) {
 ?>
 
 	<h1>Bem vindo</h1>
-	<p class="text-success">Logado como <?=funcionarioLogado()?><br><a href="logoutFuncionario.php">Deslogar</a> </p>
+	<p class="text-success">Logado como <?=funcionarioLogado()?><br><a href="logoutUsuario.php">Deslogar</a> </p>
 <?php }
 else { ?>
 
@@ -32,7 +32,7 @@ else { ?>
             <td class="tableform">
                 <h1 style="color: #FFB800;">Login Funcionário</h1>
 
-                <form action="loginFuncionario.php" method="post">
+                <form action="loginUsuario.php" method="post">
                     <table class="table" style="color: white;">
                         <tr>
                             <td>E-mail</td>

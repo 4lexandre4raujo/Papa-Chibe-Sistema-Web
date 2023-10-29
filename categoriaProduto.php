@@ -1,4 +1,5 @@
-<?php include("navBar.php");
+<?php 
+include("navBar.php");
 include("conexao.php");
 include("bancoCategoria.php");
 

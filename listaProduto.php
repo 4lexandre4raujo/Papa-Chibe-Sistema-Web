@@ -11,7 +11,7 @@ verificaFuncionario();
 <?php
 
 
-$produtos = listaProdutos($conexao);
+$produtos = listaProduto($conexao);
 
 
 foreach($produtos as $produto) {

@@ -85,6 +85,12 @@ input:checked + .slider:before {
 			<td>ingrediente: </td>
 			<td colspan="2"><textarea class="form-control" name="ingrediente" rows="3" style="resize: none;"></textarea></td>
 		</tr>
+
+		<tr>
+			<td>adicione imagem
+				<input type="file"></input>
+			</td>
+		</tr>
 		<tr>
 			<td>Disponibilidade</td>
 			<td colspan="2">

@@ -1,7 +1,7 @@
 <?php 
 include("navBar.php");
 include("conexao.php");
-include("bancoFuncionario.php");
+include("bancoUsuario.php");
 include("bancoProduto.php"); 
 
 if (isset($_SESSION["success"])) { ?>
@@ -60,7 +60,7 @@ if(funcionarioEstaLogado()) {
         </div>
 <?php }
 else { ?>
-          <a href="">
+          <a href="#">
             <button class="btn btn-danger">Adicionar ao Carrinho</button>
           </a>  
       </div>

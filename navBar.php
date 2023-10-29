@@ -10,7 +10,7 @@
 <body>
 
 <?php
-include("logicaAcessoFuncionario.php");
+include("logicaAcessoUsuario.php");
 ?>
 		<!-- Barra de navegação -->
 		<!-- As a link -->
@@ -40,7 +40,7 @@ else { ?>
 <?php
 }
 ?>
-    <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="#">MEU PERFIL</a>
+
 <?php
 if(!funcionarioEstaLogado()) {
 ?>    
@@ -51,12 +51,12 @@ if(!funcionarioEstaLogado()) {
     </div>
 <?php }
 else { ?>
-    <div class="btn btn-outline-dark btn-floating">
-        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px">Olá, <?=funcionarioLogado()?>.</a>
+    <div class="btn btn-outline-dark btn-floating" style="background-color: black">
+        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px" href="perfil.php">Olá, <u><?=funcionarioLogado()?>.</u></a>
         <br>
         <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px">Não é <?=funcionarioLogado()?>?</a>
         <br>
-        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px" href="logoutFuncionario.php"><i><u>SAIR</u></i></a>
+        <a class="navbar-brand text-white align-center mb-0 h1" style="font-size:15px" href="logoutUsuario.php"><i><u>SAIR</u></i></a>
     </div>
 <?php
 }

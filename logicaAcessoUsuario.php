@@ -2,6 +2,7 @@
 
 session_start();
 
+//funções funcionario
 function funcionarioEstaLogado() {
 	return isset($_SESSION["funcionario_logado"]);
 }
@@ -23,6 +24,32 @@ function logaFuncionario($email) {
 }
 
 function logoutFuncionario() {
+	session_destroy();
+	session_start();
+}
+
+//Funções cliente
+function  clienteEstaLogado() {
+	return isset($_SESSION["cliente_logado"]);
+}
+
+function verificaCliente() {
+	if(!clienteEstaLogado()) {
+		$_SESSION["danger"] = "Você não possui acesso a essa funcionalidade!";
+		header("Location: loginClienteFormulario.php");
+		die();
+	}
+}
+
+function clienteLogado(){
+	return $_SESSION["cliente_logado"];
+}
+
+function logaCliente($email) {
+	$_SESSION["cliente_logado"] = $email;
+}
+
+function logoutCliente() {
 	session_destroy();
 	session_start();
 }
