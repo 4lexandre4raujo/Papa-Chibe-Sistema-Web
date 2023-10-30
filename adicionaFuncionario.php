@@ -10,6 +10,8 @@ $email = $_POST["email"];
 $senha = $_POST["senha"];
 
 if(cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha)) {
+	header("Location: loginFuncionarioFormulario.php");
+	die();
 ?>
 
 	<p class="text-success">

@@ -57,10 +57,13 @@ if(funcionarioEstaLogado()) {
             <input type="hidden" name="cdproduto" value="<?=$produto['cdproduto']?>">
             <button class="btn btn-danger">Remover</button>
 			    </form>
+          <a href="adicionaCarrinho.php">
+            <button class="btn btn-danger">Adicionar ao Carrinho</button>
+          </a> 
         </div>
 <?php }
 else { ?>
-          <a href="#">
+          <a href="adicionaCarrinho.php">
             <button class="btn btn-danger">Adicionar ao Carrinho</button>
           </a>  
       </div>

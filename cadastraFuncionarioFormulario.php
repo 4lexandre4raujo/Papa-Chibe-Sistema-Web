@@ -19,23 +19,23 @@ include("bancoUsuario.php");
 				<table class="table" style="color: white;">
 					<tr>
 						<td>Nome: </td>
-						<td><input class="form-control" type="text" name="nome" placeholder="Digite o seu nome"></td>
+						<td><input class="form-control" required type="text" name="nome" placeholder="Digite o seu nome"></td>
 					
 					<tr>
                         <td>Sobrenome: </td>
-						<td><input class="form-control" type="text" name="sobrenome"placeholder="Digite o seu Sobrenome"></td>
+						<td><input class="form-control" required type="text" name="sobrenome"placeholder="Digite o seu Sobrenome"></td>
 					</tr>
 					<tr>
                         <td>Telefone: </td>
-						<td><input class="form-control" type="text" name="telefone" placeholder="(00) 00000-0000"></td>
+						<td><input class="form-control" required type="number" name="telefone" placeholder="(00) 00000-0000"></td>
 					</tr>
 					<tr>
 						<td>Email: </td>
-						<td><input class="form-control" type="text" name="email" placeholder="nome@email.com"></td>
+						<td><input class="form-control" required type="email" name="email" placeholder="nome@email.com"></td>
 					</tr>
 					<tr>
 						<td>senha: </td>
-						<td><input class="form-control" type="password" name="senha"></td>
+						<td><input class="form-control" required type="password" name="senha"></td>
 					</tr>
 
 					<tr>

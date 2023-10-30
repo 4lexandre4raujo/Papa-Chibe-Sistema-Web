@@ -36,6 +36,23 @@ function buscaProduto($conexao, $cdproduto) {
 
 	return $produto;
 }
+
+function buscarProdutosPorCategoria($conexao, $categoriaid) {
+    $produtos = array();
+
+    $query = "select * from tb_produtos where categoriaid = {$categoriaid}";
+    $stmt = $conexao->prepare($query);
+    $stmt->bind_param("i", $categoriaid);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    while ($produto = $result->fetch_assoc()) {
+        array_push($produtos, $produto);
+    }
+
+    $stmt->close();
+    return $produtos;
+}
 //Função Lista produto
 function listaProduto($conexao){
 	$produtos = array();
