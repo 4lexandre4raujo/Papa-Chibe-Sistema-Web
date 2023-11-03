@@ -14,8 +14,8 @@ include("bancoUsuario.php");
 		<td class="linha-vertical" width="40"></td>
 
 		<td class="tableform">
-			<h2 style="color: #FFB800;">Cadastro de Funcionário</h2>
-			<form action="adicionaFuncionario.php" method="post">
+			<h2 style="color: #FFB800;">Cadastro de Cliente</h2>
+			<form action="adicionaCliente.php" method="post">
 				<table class="table" style="color: white;">
 					<tr>
 						<td>Nome: </td>
@@ -46,8 +46,8 @@ include("bancoUsuario.php");
 						<td colspan="1"><button class="btn btn-primary" type="submit">Cadastrar</button></td>
 					</tr>
 					<td colspan="2">
-						<p class="link">Já possui conta?<a href="loginFuncionarioFormulario.php"
-								style="color: #FFB800;"> Fazer Login.</a></p>
+						<p class="link">Já possui conta?<a href="loginClienteFormulario.php" style="color: #FFB800;">
+								Fazer Login.</a></p>
 					</td>
 
 				</table>

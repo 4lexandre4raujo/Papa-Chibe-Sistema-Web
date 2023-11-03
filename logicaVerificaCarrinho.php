@@ -1,7 +1,7 @@
 <?php
 
 // Verifique se o produto já está no carrinho
-if(isset($_SESSION['carrinho'][$_POST['cdproduto']])) {
+if (isset($_SESSION['carrinho'][$_POST['cdproduto']])) {
     // Se o produto já estiver no carrinho, apenas atualize a quantidade
     $_SESSION['carrinho'][$_POST['cdproduto']]['quantidade'] += $_POST['quantidade'];
 } else {

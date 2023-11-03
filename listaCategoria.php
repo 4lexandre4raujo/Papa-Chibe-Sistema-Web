@@ -1,7 +1,7 @@
-<?php 
+<?php
 include("navBar.php");
 include("conexao.php");
-include("bancoCategoria.php"); 
+include("bancoCategoria.php");
 
 ?>
 
@@ -13,18 +13,24 @@ include("bancoCategoria.php");
 $categorias = listaCategorias($conexao);
 
 
-foreach($categorias as $categoria) {
-?>
-<table>
-    <div class="tableprod" height="30">
-        <p class="title" style="font-size: 30px; color: white;"><?=$categoria["nome"]?></p>
-    </div>
-</table>
-<br>
+foreach ($categorias as $categoria) {
+    ?>
 
-<?php
+    <table>
+        <div class="tableprod" height="30">
+            <form action="listaProdutoCategoria.php" method="post">
+                <p class="title" style="font-size: 30px; color: white;" type="submit">
+                    <?= $categoria["nome"] ?>
+                </p>
+            </form>
+        </div>
+    </table>
+
+    <br>
+
+    <?php
 }
 ?>
 
 
-<?php include("rodape.php") ?> 
+<?php include("rodape.php") ?>

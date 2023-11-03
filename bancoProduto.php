@@ -1,20 +1,22 @@
 <?php
 
 //Função para inserir produto
-function insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid) {
+function insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)
+{
 	$query = "insert into tb_produto (nome, valor, ingrediente, disponibilidade, categoriaid) values ('{$nome}', {$valor}, '{$ingrediente}', {$disponibilidade}, {$categoriaid})";
-	
+
 	return mysqli_query($conexao, $query);
 }
 
 
 //Função para listar produtos
-function listaProdutos($conexao) {
+function listaProdutos($conexao)
+{
 	$produtos = array();
 	$query = "select cdproduto, nome, valor from tb_produto;";
 	$result = mysqli_query($conexao, $query);
 
-	while($produto = mysqli_fetch_assoc($result)) {
+	while ($produto = mysqli_fetch_assoc($result)) {
 		array_push($produtos, $produto);
 	}
 
@@ -23,13 +25,15 @@ function listaProdutos($conexao) {
 
 
 //Função para excluir o produto
-function removeProduto($conexao, $cdproduto) {
+function removeProduto($conexao, $cdproduto)
+{
 	$query = "delete from tb_produto where cdproduto={$cdproduto}";
 	return mysqli_query($conexao, $query);
 }
 
 //Função para buscar um produto
-function buscaProduto($conexao, $cdproduto) {
+function buscaProduto($conexao, $cdproduto)
+{
 	$query = "select * from tb_produto where cdproduto={$cdproduto}";
 	$resultado = mysqli_query($conexao, $query);
 	$produto = mysqli_fetch_assoc($resultado);
@@ -37,29 +41,22 @@ function buscaProduto($conexao, $cdproduto) {
 	return $produto;
 }
 
-function buscarProdutosPorCategoria($conexao, $categoriaid) {
-    $produtos = array();
+function buscaProdutoCategoria($conexao, $categoriaid)
+{
+	$query = "select * from tb_produto where categoriaid={$categoriaid}";
+	$resultado = mysqli_query($conexao, $query);
+	$produto = mysqli_fetch_assoc($resultado);
 
-    $query = "select * from tb_produtos where categoriaid = {$categoriaid}";
-    $stmt = $conexao->prepare($query);
-    $stmt->bind_param("i", $categoriaid);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    while ($produto = $result->fetch_assoc()) {
-        array_push($produtos, $produto);
-    }
-
-    $stmt->close();
-    return $produtos;
+	return $produto;
 }
 //Função Lista produto
-function listaProduto($conexao){
+function listaProduto($conexao)
+{
 	$produtos = array();
 	$query = "select * from tb_produto;";
 	$resultado = mysqli_query($conexao, $query);
 
-	while($produto = mysqli_fetch_assoc($resultado)) {
+	while ($produto = mysqli_fetch_assoc($resultado)) {
 		array_push($produtos, $produto);
 	}
 
@@ -67,7 +64,8 @@ function listaProduto($conexao){
 }
 
 //Função para alterar o produto
-function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid) {
+function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)
+{
 	$query = "update tb_produto set nome='{$nome}', valor={$valor}, ingrediente='{$ingrediente}',  disponibilidade={$disponibilidade}, 
 	categoriaid={$categoriaid} where cdproduto={$cdproduto}";
 

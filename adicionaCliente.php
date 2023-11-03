@@ -9,13 +9,13 @@ $telefone = $_POST["telefone"];
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-if (cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha)) {
-	header("Location: loginFuncionarioFormulario.php");
+if (cadastraCliente($conexao, $nome, $sobrenome, $telefone, $email, $senha)) {
+	header("Location: loginClienteFormulario.php");
 	die();
 	?>
 
 	<p class="text-success">
-		Funcionario
+		Cliente
 		<?= $nome ?>
 		<?= $sobrenome ?>, cadastrado com sucesso!
 	</p>
@@ -25,7 +25,7 @@ if (cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha))
 	$msg = mysqli_error($conexao);
 	?>
 	<p class="text-danger">
-		Funcionario
+		Cliente
 		<?= $nome ?>
 		<?= $sobrenome ?> não foi adicionado! <br>
 		<?= $msg ?>
@@ -37,7 +37,7 @@ if (cadastraFuncionario($conexao, $nome, $sobrenome, $telefone, $email, $senha))
 
 ?>
 <div align="center">
-	<a href="loginFuncionarioFormulario.php"><button class="btn btn-primary">Fazer Login</button></a>
+	<a href="loginClienteFormulario.php"><button class="btn btn-primary">Fazer Login</button></a>
 </div>
 
 

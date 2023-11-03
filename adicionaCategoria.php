@@ -7,22 +7,25 @@ verificaFuncionario();
 
 $nome = $_POST["nome"];
 
-if(insereCategoria($conexao, $nome)) {
-?>
+if (insereCategoria($conexao, $nome)) {
+	?>
 
 	<p class="text-success">
-		Categoria <?= $nome ?> adicionado com sucesso!
+		Categoria
+		<?= $nome ?> adicionado com sucesso!
 	</p>
 
-<?php
+	<?php
 } else {
 	$msg = mysqli_error($conexao);
-?>
+	?>
 	<p class="text-danger">
-		Categoria <?= $nome ?> não foi adicionado! <br> <?= $msg ?>
+		Categoria
+		<?= $nome ?> não foi adicionado! <br>
+		<?= $msg ?>
 	</p>
 
-<?php
+	<?php
 }
 
 ?>

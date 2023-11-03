@@ -10,28 +10,32 @@ $valor = $_POST["valor"];
 $ingrediente = $_POST["ingrediente"];
 $categoriaid = $_POST["categoriaid"];
 
-if(array_key_exists('disponibilidade', $_POST)) {
+if (array_key_exists('disponibilidade', $_POST)) {
 	$disponibilidade = "true";
 } else {
 	$disponibilidade = "false";
 }
 
-if(insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)) {
-?>
+if (insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)) {
+	?>
 
 	<p class="text-success">
-		Produto <?= $nome ?>, <?= $valor ?> reais, adicionado com sucesso!
+		Produto
+		<?= $nome ?>,
+		<?= $valor ?> reais, adicionado com sucesso!
 	</p>
 
-<?php
+	<?php
 } else {
 	$msg = mysqli_error($conexao);
-?>
+	?>
 	<p class="text-danger">
-		Produto <?= $nome ?> não foi adicionado! <br> <?= $msg ?>
+		Produto
+		<?= $nome ?> não foi adicionado! <br>
+		<?= $msg ?>
 	</p>
 
-<?php
+	<?php
 }
 
 ?>

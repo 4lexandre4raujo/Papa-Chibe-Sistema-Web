@@ -3,53 +3,63 @@
 session_start();
 
 //funções funcionario
-function funcionarioEstaLogado() {
+function funcionarioEstaLogado()
+{
 	return isset($_SESSION["funcionario_logado"]);
 }
 
-function verificaFuncionario() {
-	if(!funcionarioEstaLogado()) {
+function verificaFuncionario()
+{
+	if (!funcionarioEstaLogado()) {
 		$_SESSION["danger"] = "Você não possui acesso a essa funcionalidade!";
-		header("Location: loginFuncionarioFormulario.php");
+		header("Location: selecaoUsuario.php");
 		die();
 	}
 }
 
-function funcionarioLogado(){
+function funcionarioLogado()
+{
 	return $_SESSION["funcionario_logado"];
 }
 
-function logaFuncionario($email) {
+function logaFuncionario($email)
+{
 	$_SESSION["funcionario_logado"] = $email;
 }
 
-function logoutFuncionario() {
+function logoutFuncionario()
+{
 	session_destroy();
 	session_start();
 }
 
 //Funções cliente
-function  clienteEstaLogado() {
+function clienteEstaLogado()
+{
 	return isset($_SESSION["cliente_logado"]);
 }
 
-function verificaCliente() {
-	if(!clienteEstaLogado()) {
+function verificaCliente()
+{
+	if (!clienteEstaLogado()) {
 		$_SESSION["danger"] = "Você não possui acesso a essa funcionalidade!";
-		header("Location: loginClienteFormulario.php");
+		header("Location: selecaoUsuario.php");
 		die();
 	}
 }
 
-function clienteLogado(){
+function clienteLogado()
+{
 	return $_SESSION["cliente_logado"];
 }
 
-function logaCliente($email) {
+function logaCliente($email)
+{
 	$_SESSION["cliente_logado"] = $email;
 }
 
-function logoutCliente() {
+function logoutCliente()
+{
 	session_destroy();
 	session_start();
 }

@@ -33,25 +33,16 @@ if (funcionarioEstalogado()) {
                 <td class="linha-vertical"></td>
 
                 <td class="tableform">
-                    <h1 style="color: #FFB800;">Login Funcionário</h1>
+                    <h1 style="color: #FFB800;">QUEM VOCÊ É?</h1>
 
                     <form action="loginUsuario.php" method="post">
                         <table class="table" style="color: white;">
                             <tr>
-                                <td>E-mail</td>
-                                <td><input class="form-control" type="email" name="email" placeholder="Digite seu email">
-                                </td>
+                                <td colspan="1"><button class="btn btn-primary"><a
+                                            href="loginClienteFormulario.php">Cliente</a></button></td>
+                                <td colspan="1"><button class="btn btn-primary"><a
+                                            href="loginFuncionarioFormulario.php">Funcionário</a></button></td>
                             </tr>
-                            <tr>
-                                <td>Senha</td>
-                                <td><input class="form-control" type="password" name="senha" placeholder="Digite sua senha">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="1"><button class="btn btn-primary">Login</button></td>
-                            </tr>
-                            <td colspan="2">Ainda não possui conta?<a href="cadastraFuncionarioFormulario.php"
-                                    style="color: #FFB800;"> Cadastre-se</a></td>
                         </table>
                     </form>
                 </td>

@@ -3,16 +3,15 @@ include("navBar.php");
 include("conexao.php");
 include("bancoProduto.php");
 
-
 verificaFuncionario();
 ?>
 
-<h2 style="color: white">TODOS OS PRODUTOS</h2>
+<h2 style="color: white">PIZZAS</h2>
 <br>
 <?php
 
 
-$produtos = listaProduto($conexao);
+$produtos = buscaProdutoCategoria($conexao);
 
 
 foreach ($produtos as $produto) {

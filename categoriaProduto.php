@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("navBar.php");
 include("conexao.php");
 include("bancoCategoria.php");
@@ -21,4 +21,3 @@ verificaFuncionario();
 </form>
 
 <?php include("rodape.php") ?>
-		

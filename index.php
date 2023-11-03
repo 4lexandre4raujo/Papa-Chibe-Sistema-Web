@@ -1,11 +1,13 @@
-<?php 
+<?php
 include("navBar.php");
 include("conexao.php");
 include("bancoUsuario.php");
-include("bancoProduto.php"); 
+include("bancoProduto.php");
 
 if (isset($_SESSION["success"])) { ?>
-	<p class="alert-success"><?=$_SESSION["success"]?></p>
+  <p class="alert-success">
+    <?= $_SESSION["success"] ?>
+  </p>
 <?php }
 
 unset($_SESSION["success"]);
@@ -14,64 +16,68 @@ unset($_SESSION["success"]);
 
 
 <table>
-    <div class="infprod">
-      EM DESTAQUE
-    </div>
-    <div class="tableprod">
-      <div class="media-scroller snaps-inline">
-        <div class="media-element">
-          
-        </div>
+  <div class="infprod">
+    EM DESTAQUE
+  </div>
+  <div class="tableprod">
+    <div class="media-scroller snaps-inline">
+      <div class="media-element">
+
       </div>
     </div>
+  </div>
 </table>
-    <table>
-    <br>
-    <br>
-    <div class="infprod">
-      PRODUTOS DISPONÍVEIS
-    </div>
-    <div class="tableprod">
-      <div class="media-scroller snaps-inline">
+<table>
+  <br>
+  <br>
+  <div class="infprod">
+    PRODUTOS DISPONÍVEIS
+  </div>
+  <div class="tableprod">
+    <div class="media-scroller snaps-inline">
 
-<?php
-
-
-$produtos = listaProdutos($conexao);
+      <?php
 
 
-foreach($produtos as $produto) {
-?>
+      $produtos = listaProdutos($conexao);
+
+
+      foreach ($produtos as $produto) {
+        ?>
         <div class="media-element">
           <img src="img/produto1.png" alt="">
-          <p class="title"><?=$produto["nome"]?></p>
-          <p class="title">R$ <?=$produto["valor"]?></p>
-<?php
-if(funcionarioEstaLogado()) {
-?>
-          <a href="produtoAlteraFormulario.php?cdproduto=<?=$produto['cdproduto']?>">
-            <button class="btn btn-danger">Editar Produto</button>
-          </a>
-          <br>
-          <form action="logicaRemoveProduto.php" method="post">
-            <input type="hidden" name="cdproduto" value="<?=$produto['cdproduto']?>">
-            <button class="btn btn-danger">Remover</button>
-			    </form>
-          <a href="adicionaCarrinho.php">
-            <button class="btn btn-danger">Adicionar ao Carrinho</button>
-          </a> 
+          <p class="title" name="nome_produto" value="<?= $produto["nome"] ?>">
+              <?= $produto["nome"] ?>
+            </p>
+            <p class="title" name="preco" value="<?= $produto["valor"] ?>">R$
+              <?= $produto["valor"] ?>
+            </p>
+            <?php
+            if (funcionarioEstaLogado()) {
+              ?>
+
+              <button class="btn btn-danger">
+                <a href="produtoAlteraFormulario.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
+                  Editar Produto
+                </a>
+              </button>
+
+              <br>
+              <form action="logicaRemoveProduto.php" method="post">
+                <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
+                <button class="btn btn-danger">Remover</button>
+              </form>
+            </div>
+            <?php } else { ?>
+            <form method="post" action="adicionaCarrinho.php">
+              <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
+            </form>
         </div>
-<?php }
-else { ?>
-          <a href="adicionaCarrinho.php">
-            <button class="btn btn-danger">Adicionar ao Carrinho</button>
-          </a>  
-      </div>
-<?php
-}
-}?>
-    </div>
-</table>    
+        <?php
+            }
+      } ?>
+  </div>
+</table>
 
 </table>
-<?php include("rodape.php") ?> 
+<?php include("rodape.php") ?>
