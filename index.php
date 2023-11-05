@@ -44,14 +44,12 @@ unset($_SESSION["success"]);
 
       foreach ($produtos as $produto) {
         ?>
-        <div class="media-element">
-          <img src="img/produto1.png" alt="">
-          <p class="title" name="nome_produto" value="<?= $produto["nome"] ?>">
-              <?= $produto["nome"] ?>
-            </p>
-            <p class="title" name="preco" value="<?= $produto["valor"] ?>">R$
-              <?= $produto["valor"] ?>
-            </p>
+        <form method="post" action="adicionaCarrinho.php">
+          <div class="media-element">
+            <img src="img/produto1.png" alt="">
+            <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
+            <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
+            <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />
             <?php
             if (funcionarioEstaLogado()) {
               ?>
@@ -61,17 +59,17 @@ unset($_SESSION["success"]);
                   Editar Produto
                 </a>
               </button>
+              <button class="btn btn-danger"><a href="logicaRemoveProduto.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
+                  Remover Produto
+                </a></button>
 
               <br>
-              <form action="logicaRemoveProduto.php" method="post">
-                <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
-                <button class="btn btn-danger">Remover</button>
-              </form>
             </div>
-            <?php } else { ?>
-            <form method="post" action="adicionaCarrinho.php">
-              <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
-            </form>
+          <?php } else { ?>
+
+            <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
+          </form>
+                
         </div>
         <?php
             }

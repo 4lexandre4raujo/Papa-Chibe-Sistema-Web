@@ -18,11 +18,17 @@ foreach ($categorias as $categoria) {
 
     <table>
         <div class="tableprod" height="30">
+            <!-- <form action="listaProdutoCategoria.php" method="post">
+                <input class="title" style="font-size: 30px; color: white;" type="submit" value="<?= $categoria["nome"] ?>" name="add">
+                    
+            </form> -->
             <form action="listaProdutoCategoria.php" method="post">
-                <p class="title" style="font-size: 30px; color: white;" type="submit">
-                    <?= $categoria["nome"] ?>
+                <input type="hidden" name="categoria_id" value="<?= $categoria["cdcategoria"] ?>">
+                <p class="title" style="font-size: 30px; color: white;">
+                    <button type="submit"><?= $categoria["nome"] ?></button>
                 </p>
             </form>
+
         </div>
     </table>
 

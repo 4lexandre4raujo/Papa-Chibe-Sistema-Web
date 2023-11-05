@@ -1,5 +1,6 @@
 <?php
 include("navBar.php");
+include("bancoUsuario.php");
 ?>
 
 <table>
@@ -10,8 +11,8 @@ include("navBar.php");
     <div class="media-scroller snaps-inline">
       <div class="media-element">
         <div>
-          Minhas Informações
-          <div></div>
+          <h5>Minhas Informações</h5>
+          
         </div>
       </div>
     </div>

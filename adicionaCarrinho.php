@@ -1,10 +1,16 @@
 <?php
 session_start();
+$produto_id = $_POST['cdproduto'];
+$nome_produto = $_POST['nome_produto'];
+$preco = $_POST['preco'];
+$quantidade = 1;
+
+echo $produto_id.'<br>';
+echo $nome_produto.'<br>';
+echo $preco.'<br>';
+echo $quantidade.'<br>';
+
 if (isset($_POST['add'])) {
-    $produto_id = $_POST['produto_id'];
-    $nome_produto = $_POST['nome_produto'];
-    $preco = $_POST['preco'];
-    $quantidade = $_POST['quantidade'];
 
     if (isset($_SESSION['carrinho'][$produto_id])) {
         $_SESSION['carrinho'][$produto_id]['quantidade'] += $quantidade;

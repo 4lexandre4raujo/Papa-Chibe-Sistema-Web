@@ -36,7 +36,7 @@
             <?php
             if (!funcionarioEstaLogado()) {
                 ?>
-                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="#">ACOMPANHAR PEDIDO</a>
+                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidos.php">ACOMPANHAR PEDIDO</a>
             <?php } else { ?>
                 <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="#">ACOMPANHAR ENTREGA</a>
                 <?php

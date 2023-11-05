@@ -6,42 +6,30 @@ include("bancoProduto.php");
 verificaFuncionario();
 ?>
 
-<h2 style="color: white">PIZZAS</h2>
+<h2 style="color: white">PRODUTOS</h2>
 <br>
 <?php
 
+if(isset($_POST['categoria_id'])) {
+    $categoria_id = $_POST['categoria_id'];
 
-$produtos = buscaProdutoCategoria($conexao);
+    // Recupere os produtos da categoria selecionada
+    $produtos = listaProdutosPorCategoria($conexao, $categoria_id);
 
-
-foreach ($produtos as $produto) {
-  ?>
-  <table>
-    <div class="tableprod">
-      <p class="title" style="font-size: 30px; color: white;">
-        <?= $produto["nome"] ?>
-      </p>
-      <p class="title" style="font-size: 20px; color: white;">
-        <?= $produto["ingrediente"] ?>
-      </p>
-      <p class="title" style="font-size: 20px; color: white;">
-        <?= $produto["valor"] ?>
-      </p>
-    </div>
-    <a href="produtoAlteraFormulario.php?cdproduto=<?= $produto['cdproduto'] ?>">
-      <button class="btn btn-danger">Editar Produto</button>
-    </a>
-
-    <form action="logicaRemoveProduto.php" method="post">
-      <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
-      <button class="btn btn-danger">Remover</button>
-    </form>
-  </table>
-  <br>
-
-  <?php
+    if ($produtos) {
+        foreach ($produtos as $produto) {
+            echo "<p>{$produto['nome']}</p>";
+            echo "<p>{$produto['ingrediente']}</p>";
+            echo "<p>{$produto['valor']}</p>";
+            // Adicione mais informações conforme necessário
+            echo "<br>";
+        }
+    } else {
+        echo "Nenhum produto encontrado para esta categoria.";
+    }
+} else {
+    echo "Categoria não especificada.";
 }
-?>
 
-<?php
 include("rodape.php");
+?>

@@ -72,3 +72,20 @@ function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $dispo
 
 	return mysqli_query($conexao, $query);
 }
+
+function listaProdutosPorCategoria($conexao, $categoria_id) {
+    $query = "SELECT * FROM produtos WHERE categoria_id = {$categoria_id}";
+    $resultado = mysqli_query($conexao, $query);
+
+    if (!$resultado) {
+        die("Erro na consulta: " . mysqli_error($conexao));
+    }
+
+    $produtos = array();
+
+    while ($produto = mysqli_fetch_assoc($resultado)) {
+        $produtos[] = $produto;
+    }
+
+    return $produtos;
+}
