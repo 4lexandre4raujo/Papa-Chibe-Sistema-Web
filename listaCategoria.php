@@ -23,7 +23,7 @@ foreach ($categorias as $categoria) {
                     
             </form> -->
             <form action="listaProdutoCategoria.php" method="post">
-                <input type="hidden" name="categoria_id" value="<?= $categoria["cdcategoria"] ?>">
+                <input type="hidden" name="categoriaid" value="<?= $categoria["cdcategoria"] ?>">
                 <p class="title" style="font-size: 30px; color: white;">
                     <button type="submit"><?= $categoria["nome"] ?></button>
                 </p>

@@ -35,7 +35,7 @@ if (clienteEstalogado()) {
                 <td class="tableform">
                     <h1 style="color: #FFB800;">Login Cliente</h1>
 
-                    <form action="loginUsuario.php" method="post">
+                    <form action="loginCliente.php" method="post">
                         <table class="table" style="color: white;">
                             <tr>
                                 <td>E-mail</td>
@@ -48,7 +48,7 @@ if (clienteEstalogado()) {
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="1"><button class="btn btn-primary">Login</button></td>
+                                <td colspan="1"><button class="btn btn-primary" type="submit" name="funcionario_login">Login</button></td>
                             </tr>
                             <td colspan="2">Ainda não possui conta?<a href="cadastraClienteFormulario.php"
                                     style="color: #FFB800;"> Cadastre-se</a></td>

@@ -35,7 +35,7 @@ if (funcionarioEstalogado()) {
                 <td class="tableform">
                     <h1 style="color: #FFB800;">Login Funcionário</h1>
 
-                    <form action="loginUsuario.php" method="post">
+                    <form action="loginFuncionario.php" method="post">
                         <table class="table" style="color: white;">
                             <tr>
                                 <td>E-mail</td>

@@ -67,7 +67,18 @@ include("navBar.php");
         <label for="telefone">Telefone:</label>
         <input type="text" id="telefone" name="telefone" required><br><br>
         <?php if(clienteEstaLogado()): ?>
-        <input type="submit" value="Finalizar Pedido">
+            <form action="processarPagamento.php" method="post">
+    <input type="hidden" name="pedido_id" value="<?php echo $pedido_id; ?>">
+    <h2 style="color: white;">Finalizar Pedido</h2>
+    <label for="metodo_pagamento" style="color: white;">Escolha o método de pagamento:</label>
+    <select id="metodo_pagamento" name="metodo_pagamento" required>
+        <option value="cartao">Cartão de Crédito</option>
+        <option value="pix">PIX</option>
+        <option value="dinheiro">Dinheiro</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Finalizar Pedido">
+</form>
         <?php endif; ?>
         <?php if(!clienteEstaLogado()): ?>
         <button><a href="loginClienteFormulario.php">Logar para efetuar pedido</a></button>

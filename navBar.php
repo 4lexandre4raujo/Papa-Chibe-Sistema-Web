@@ -149,6 +149,16 @@
             border-radius: 60px 60px 60px 60px;
         }
 
+        /* .media-scroller {
+            --_spacer: var(--size-3);
+            display: grid;
+            gap: var(--_spacer);
+            grid-template-rows: repeat(4, 1fr); /* Crie 4 linhas de altura igual */
+            /* max-height: 100vh; Defina a altura máxima como a altura da tela */
+            /* overflow-y: auto; Adicione uma barra de rolagem vertical quando necessário */
+            /* overscroll-behavior-inline: contain; */
+        /* }  */
+
         .media-scroller {
             --_spacer: var(--size-3);
             display: grid;

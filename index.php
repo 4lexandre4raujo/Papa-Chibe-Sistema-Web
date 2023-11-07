@@ -36,44 +36,46 @@ unset($_SESSION["success"]);
   <div class="tableprod">
     <div class="media-scroller snaps-inline">
 
-      <?php
+    <?php
+$produtos = listaProdutos($conexao);
 
-
-      $produtos = listaProdutos($conexao);
-
-
-      foreach ($produtos as $produto) {
-        ?>
-        <form method="post" action="adicionaCarrinho.php">
-          <div class="media-element">
-            <img src="img/produto1.png" alt="">
-            <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
-            <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
-            <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />
-            <?php
-            if (funcionarioEstaLogado()) {
-              ?>
-
-              <button class="btn btn-danger">
-                <a href="produtoAlteraFormulario.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
-                  Editar Produto
-                </a>
-              </button>
-              <button class="btn btn-danger"><a href="logicaRemoveProduto.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
-                  Remover Produto
-                </a></button>
-
-              <br>
-            </div>
-          <?php } else { ?>
-
-            <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
-          </form>
-                
-        </div>
-        <?php
-            }
-      } ?>
+foreach ($produtos as $produto) {
+?>
+  <div class="media-element">
+    <img src="img/produto1.png" alt="">
+    <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
+    <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
+    <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />
+    <?php
+    if (funcionarioEstaLogado()) {
+    ?>
+      <button class="btn btn-danger">
+        <a href="produtoAlteraFormulario.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
+          Editar Produto
+        </a>
+      </button>
+      <button class="btn btn-danger">
+        <a href="logicaRemoveProduto.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
+          Remover Produto
+        </a>
+      </button>
+      <br>
+    <?php
+    } else {
+    ?>
+      <form method="post" action="adicionaCarrinho.php">
+        <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
+        <input type="hidden" name="nome_produto" value="<?= $produto["nome"] ?>">
+        <input type="hidden" name="preco" value="<?= $produto["valor"] ?>">
+        <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
+      </form>
+    <?php
+    }
+    ?>
+  </div>
+<?php
+}
+?>
   </div>
 </table>
 

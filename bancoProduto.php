@@ -74,7 +74,7 @@ function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $dispo
 }
 
 function listaProdutosPorCategoria($conexao, $categoria_id) {
-    $query = "SELECT * FROM produtos WHERE categoria_id = {$categoria_id}";
+    $query = "SELECT * FROM tb_produto WHERE categoriaid = {$categoria_id}";
     $resultado = mysqli_query($conexao, $query);
 
     if (!$resultado) {

@@ -1,5 +1,5 @@
 <?php
-include("navBar.php");
+
 include("conexao.php");
 include("bancoUsuario.php");
 
