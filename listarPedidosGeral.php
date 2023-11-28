@@ -2,7 +2,10 @@
 include("navBar.php");
 include("conexao.php");
 
-$sql = "SELECT * FROM tb_pedido where usuario = ".clienteCd();;
+$sql = "SELECT tb_pedido.*, tb_cliente.nome AS nome_cliente
+FROM tb_pedido
+JOIN tb_cliente ON tb_pedido.usuario = tb_cliente.cdcliente;
+";
 $result = $conexao->query($sql);
 
 ?>
@@ -19,6 +22,7 @@ $result = $conexao->query($sql);
     <table border="1" style="color: white;">
         <tr>
             <th>ID do Pedido</th>
+            <th>Cliente</th>
             <th>Endereço</th>
             <th>Telefone</th>
             <th>Total</th>
@@ -32,6 +36,7 @@ $result = $conexao->query($sql);
                 ?>
                 <tr>
                     <td><?php echo $pedido_id; ?></td>
+                    <td><?php echo $row['nome_cliente']; ?></td>
                     <td><?php echo $row['endereco']; ?></td>
                     <td><?php echo $row['telefone']; ?></td>
                     <td><?php echo $row['total']; ?></td>

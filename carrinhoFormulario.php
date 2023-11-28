@@ -61,10 +61,10 @@ include("navBar.php");
 
     <form action="finalizarPedido.php" method="post">
         <h2 style="color: white;">Informações de Entrega</h2>
-        <label for="endereco">Endereço:</label>
+        <label for="endereco" style="color: white;">Endereço:</label>
         <input type="text" id="endereco" name="endereco" required><br><br>
 
-        <label for="telefone">Telefone:</label>
+        <label for="telefone" style="color: white;">Telefone:</label>
         <input type="text" id="telefone" name="telefone" required><br><br>
         <?php if(clienteEstaLogado()): ?>
             <form action="processarPagamento.php" method="post">

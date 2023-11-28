@@ -5,10 +5,10 @@ include("bancoUsuario.php");
 
 ?>
 
-<table>
+<table class="tablelogin">
 	<tr>
 		<td>
-			<img src="img/logoPapaChibe.png" width="600" height="600" alt="">
+			<img src="img/logoPapaChibe.png" width="400" height="400" alt="">
 		</td>
 
 		<td class="linha-vertical" width="40"></td>
@@ -29,7 +29,7 @@ include("bancoUsuario.php");
 					</tr>
 					<tr>
 						<td>Telefone: </td>
-						<td><input class="form-control" required type="number" name="telefone"
+						<td><input class="form-control" required type="number" maxlength="10" name="telefone"
 								placeholder="(00) 00000-0000"></td>
 					</tr>
 					<tr>

@@ -7,7 +7,7 @@ $cliente = buscaCliente($conexao, $_POST["email"], $_POST["senha"]);
 
 if ($cliente != null) {
     $_SESSION["success"] = "Cliente logado com sucesso!";
-    logaCliente($cliente["email"]);
+    logaCliente($cliente["email"],$cliente["cdcliente"]);
     header("Location: index.php");
     die();
 } else {

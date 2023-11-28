@@ -6,8 +6,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-    <title>Pizzaria</title>
+        <link rel="icon" href="img/icone.png" type="image/png">
+    <title>Pizzaria PapaChibé</title>
 </head>
 
 <body>
@@ -23,10 +23,9 @@
             <?php
             if (!funcionarioEstaLogado()) {
                 ?>
-                <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="#">FAZER PEDIDO</a>
+                <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="index.php">FAZER PEDIDO</a>
             <?php } else { ?>
-                <a class="navbar-brand text-white btn-floating mb-0 h1" style="font-size:15px" href="listaProduto.php">LISTA
-                    PRODUTOS</a>
+                
                 <?php
             }
             ?>
@@ -36,9 +35,9 @@
             <?php
             if (!funcionarioEstaLogado()) {
                 ?>
-                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidos.php">ACOMPANHAR PEDIDO</a>
+                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidos.php">MEUS PEDIDOS</a>
             <?php } else { ?>
-                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="#">ACOMPANHAR ENTREGA</a>
+                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidosGeral.php">ACOMPANHAR ENTREGA</a>
                 <?php
             }
             ?>
@@ -78,7 +77,7 @@
                 </div>
                 <?php
 
-            } else {
+            } else if (!funcionarioEstaLogado()) {
                 ?>
                 <div class="btn btn-outline-dark btn-floating">
                     <img src="img/iconPerfil.png" width="30" class="d-inline-block align-center" alt="">
@@ -123,6 +122,10 @@
             font-size: 13px;
             margin: 0px;
         }
+        
+        h1, h2, h3, h4, td, p, a{
+            color: white;
+        }
 
         body {
             background-image: url('img/background.png');
@@ -143,6 +146,20 @@
             /* width: 268px; */
         }
 
+        .tablelogin {
+            display: block;
+            margin: 0 auto;
+            width: 70%;
+        }
+        
+        @media only screen and (max-width: 990px) {
+
+        	.wrapper .tablelogin {
+        		width: 100%
+        	}
+        
+        }
+        
         .tableform {
             background: rgba(0, 0, 0, 0.3);
             padding: 20px;
@@ -163,14 +180,12 @@
             --_spacer: var(--size-3);
             display: grid;
             gap: var(--_spacer);
-            grid-auto-flow: column;
-            grid-auto-columns: 21%;
-
+            grid-template-columns: repeat(4, 1fr);
             padding: 0 var(--_spacer) var(--_spacer);
-
             overflow-x: auto;
             overscroll-behavior-inline: contain;
         }
+
 
         .media-scroller--with-groups {
             grid-auto-columns: 80%;
@@ -190,7 +205,7 @@
             background: var(--surface-2);
             border-radius: var(--radius-2);
             box-shadow: var(--shadow-2);
-            color: white;
+            color:white;
         }
 
         .media-element>img {
@@ -227,6 +242,7 @@
         .principal {
             padding: 40px 15px;
             text-align: center;
+            color: white;
         }
 
         table {

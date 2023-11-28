@@ -12,7 +12,7 @@ $disponibilidade = $produto['disponibilidade'] ? "checked='checked'" : "";
 ?>
 
 <h1>Alteração de Produto</h1>
-<form action="logicaAlteraProduto.php" method="post">
+<form action="logicaAlteraProduto.php" method="post" enctype="multipart/form-data">>
 	<input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
 	<table class="table">
 		<tr>
@@ -28,6 +28,12 @@ $disponibilidade = $produto['disponibilidade'] ? "checked='checked'" : "";
 			<td><textarea class="form-control" name="ingrediente" rows="3"
 					style="resize: none;"><?= $produto['ingrediente'] ?></textarea></td>
 		</tr>
+		
+		<tr>
+            <td>Adicione imagem</td>
+            <td><input type="file" name="imagem"></td>
+        </tr>
+        
 		<tr>
 			<td>Disponibilidade</td>
 			<td>

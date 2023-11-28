@@ -5,10 +5,10 @@ include("bancoUsuario.php");
 
 ?>
 
-<table>
+<table class="tablelogin">
 	<tr>
 		<td>
-			<img src="img/logoPapaChibe.png" width="600" height="600" alt="">
+			<img src="img/logoPapaChibe.png" width="400" height="400" alt="">
 		</td>
 
 		<td class="linha-vertical" width="40"></td>

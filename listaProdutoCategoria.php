@@ -21,6 +21,9 @@ if(isset($_POST['categoriaid'])) {
             
             <div class="tableprod">
             <form method="post" action="adicionaCarrinho.php">
+                
+                <img class="imagem_produto" width='150" src="<?= $produto['imagem'] ?>">
+                
                 <p class="title" style="font-size: 30px; color: white;">
                     <?= $produto["nome"] ?>
                 </p>
@@ -30,11 +33,12 @@ if(isset($_POST['categoriaid'])) {
                 <p class="title" style="font-size: 20px; color: white;">
                     <?= $produto["valor"] ?>
                 </p>
+            </div>
             <?php
             if(!funcionarioEstaLogado()){
             ?> 
-            </div>
                 <button class="btn btn-danger" type="submit" name="add">Adicionar ao Carrinho</button>
+                <br>
             </form>
             
             <br>
@@ -51,6 +55,7 @@ if(isset($_POST['categoriaid'])) {
                 Remover Produto
                 </a>
             </button>
+            <br>
             <?php
            }
         }

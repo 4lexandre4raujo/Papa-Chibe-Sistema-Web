@@ -42,7 +42,7 @@ $produtos = listaProdutos($conexao);
 foreach ($produtos as $produto) {
 ?>
   <div class="media-element">
-    <img src="img/produto1.png" alt="">
+    <img src="./<?= $produto['imagem'] ?? 'img/produto1.png' ?>">
     <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
     <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
     <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />

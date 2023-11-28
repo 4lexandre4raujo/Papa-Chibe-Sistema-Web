@@ -1,10 +1,9 @@
 <?php
 
 //Função para inserir produto
-function insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)
+function insereProduto($conexao, $nome, $valor, $ingrediente, $imagem, $disponibilidade, $categoriaid)
 {
-	$query = "insert into tb_produto (nome, valor, ingrediente, disponibilidade, categoriaid) values ('{$nome}', {$valor}, '{$ingrediente}', {$disponibilidade}, {$categoriaid})";
-
+	$query = "insert into tb_produto (nome, valor, ingrediente, imagem, disponibilidade, categoriaid) values ('{$nome}', {$valor}, '{$ingrediente}', '{$imagem}', {$disponibilidade}, {$categoriaid})";
 	return mysqli_query($conexao, $query);
 }
 
@@ -13,7 +12,7 @@ function insereProduto($conexao, $nome, $valor, $ingrediente, $disponibilidade, 
 function listaProdutos($conexao)
 {
 	$produtos = array();
-	$query = "select cdproduto, nome, valor from tb_produto;";
+	$query = "select cdproduto, nome, valor, imagem from tb_produto;";
 	$result = mysqli_query($conexao, $query);
 
 	while ($produto = mysqli_fetch_assoc($result)) {
@@ -49,24 +48,26 @@ function buscaProdutoCategoria($conexao, $categoriaid)
 
 	return $produto;
 }
-//Função Lista produto
 function listaProduto($conexao)
 {
-	$produtos = array();
-	$query = "select * from tb_produto;";
-	$resultado = mysqli_query($conexao, $query);
+    $produtos = array();
+    $query = "select * from tb_produto;"; // Include "imagem" in the query
+    $result = mysqli_query($conexao, $query);
 
-	while ($produto = mysqli_fetch_assoc($resultado)) {
-		array_push($produtos, $produto);
-	}
+    while ($produto = mysqli_fetch_assoc($result)) {
+        array_push($produtos, $produto);
+    }
 
-	return $produtos;
+    var_dump($produtos); // Add this line for debugging
+
+    return $produtos;
 }
 
+
 //Função para alterar o produto
-function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $disponibilidade, $categoriaid)
+function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $imagem, $disponibilidade, $categoriaid)
 {
-	$query = "update tb_produto set nome='{$nome}', valor={$valor}, ingrediente='{$ingrediente}',  disponibilidade={$disponibilidade}, 
+	$query = "update tb_produto set nome='{$nome}', valor={$valor}, ingrediente='{$ingrediente}', imagem='{$imagem}', disponibilidade={$disponibilidade}, 
 	categoriaid={$categoriaid} where cdproduto={$cdproduto}";
 
 

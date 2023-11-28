@@ -1,10 +1,12 @@
 <?php
 session_start();
-include("conexao.php"); 
+include("conexao.php");
+include("logicaAcessoUsuario.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
+    $cdcliente = clienteCd();
 
     $total = 0;
     foreach ($_SESSION['carrinho'] as $id => $detalhes) {
@@ -12,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $total += $subtotal;
     }
 
-    $insertPedido = $conexao->prepare("INSERT INTO tb_pedido (endereco, telefone, total) VALUES (?, ?, ?)");
-    $insertPedido->bind_param("ssd", $endereco, $telefone, $total);
+    $insertPedido = $conexao->prepare("INSERT INTO tb_pedido (endereco, telefone, total, usuario) VALUES (?, ?, ?, ?)");
+    $insertPedido->bind_param("ssdi", $endereco, $telefone, $total, $cdcliente);
     $insertPedido->execute();
     $pedido_id = $conexao->insert_id;
 

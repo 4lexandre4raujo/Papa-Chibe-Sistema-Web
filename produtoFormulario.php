@@ -71,7 +71,7 @@ $categorias = listaCategorias($conexao);
 	}
 </style>
 <h1>Formulário de Produto</h1>
-<form action="adicionaProduto.php" method="post">
+<form action="adicionaProduto.php" method="post" enctype="multipart/form-data">
 	<table class="table">
 		<tr>
 			<td>Nome: </td>
@@ -87,11 +87,12 @@ $categorias = listaCategorias($conexao);
 			</td>
 		</tr>
 
+		
 		<tr>
-			<td>adicione imagem
-				<input type="file"></input>
-			</td>
-		</tr>
+            <td>Adicione imagem</td>
+            <td><input type="file" name="imagem"></td>
+        </tr>
+		
 		<tr>
 			<td>Disponibilidade</td>
 			<td colspan="2">

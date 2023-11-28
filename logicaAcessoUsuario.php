@@ -53,9 +53,14 @@ function clienteLogado()
 	return $_SESSION["cliente_logado"];
 }
 
-function logaCliente($email)
+function clienteCd () {
+    return $_SESSION["cdcliente"];
+}
+
+function logaCliente($email, $cdcliente)
 {
 	$_SESSION["cliente_logado"] = $email;
+	$_SESSION["cdcliente"] = $cdcliente;
 }
 
 function logoutCliente()
