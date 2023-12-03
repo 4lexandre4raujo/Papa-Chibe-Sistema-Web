@@ -4,30 +4,40 @@ include("conexao.php");
 
 $sql = "SELECT tb_pedido.*, tb_cliente.nome AS nome_cliente
 FROM tb_pedido
-JOIN tb_cliente ON tb_pedido.usuario = tb_cliente.cdcliente;
-";
+JOIN tb_cliente ON tb_pedido.usuario = tb_cliente.cdcliente;";
 $result = $conexao->query($sql);
 
 ?>
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>Listar Pedidos</title>
-</head>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        button {
+            font-size: 16px;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
 <body>
-    <h2 style="color: white;">Lista de Pedidos</h2>
+    <h2 style="color: white;">ACOMPANHAMENTO DE PEDIDOS</h2>
+<br>
+<div class="tableprodPedFunc">
+    <div class="infprod">
+        PEDIDOS ATUAIS
+    </div>
+<table>
+  
     <table border="1" style="color: white;">
         <tr>
-            <th>ID do Pedido</th>
+            <th width="50px">ID</th>
             <th>Cliente</th>
             <th>Endereço</th>
             <th>Telefone</th>
-            <th>Total</th>
+            <th>Tipo Pagamento</th>
+            <th width="120px">Status</th>
             <th>Data do Pedido</th>
             <th>Itens do Pedido</th>
+            <th>Total</th>
         </tr>
         <?php
         if ($result->num_rows > 0) {
@@ -39,7 +49,31 @@ $result = $conexao->query($sql);
                     <td><?php echo $row['nome_cliente']; ?></td>
                     <td><?php echo $row['endereco']; ?></td>
                     <td><?php echo $row['telefone']; ?></td>
-                    <td><?php echo $row['total']; ?></td>
+                    <td>Dinheiro</td>
+                    <td> Receber pedido? <br>
+                            <!-- Botão Confirmar com ícone de visto -->
+                        <button onclick="confirmarAcao()" style="background-color: #FFB800;">
+                            <i class="fas fa-check"></i> 
+                        </button>
+
+                        <!-- Botão Cancelar com ícone de x -->
+                        <button onclick="cancelarAcao()" style="background-color: #9C0000;">
+                            <i class="fas fa-times"></i> 
+                        </button>
+
+                        <!-- Adicione scripts de ação se necessário -->
+                        <script>
+                            function confirmarAcao() {
+                                alert("Ação confirmada!");
+                                // Adicione mais lógica aqui, se necessário
+                            }
+
+                            function cancelarAcao() {
+                                alert("Ação cancelada!");
+                                // Adicione mais lógica aqui, se necessário
+                            }
+                        </script>
+                    </td>
                     <td><?php echo $row['data_pedido']; ?></td>
                     <td>
                         <?php
@@ -57,18 +91,36 @@ $result = $conexao->query($sql);
                         }
                         ?>
                     </td>
+                    <td><?php echo $row['total']; ?></td>
                 </tr>
-            <?php
+                <?php
             }
         } else {
             ?>
             <tr>
                 <td colspan="6">Não há pedidos</td>
             </tr>
-        <?php
+            <?php
         }
         ?>
     </table>
+</table>
+</div>
+<br>
+<br>
+<table>
+  <div class="infprod">
+    HISTÓRICO DE PEDIDOS
+  </div>
+  <div class="tableprod">
+    <div class="media-scroller snaps-inline">
+      <div class="media-element">
+
+      </div>
+    </div>
+  </div>
+</table>
+    
     <br>
     <a href="index.php">Voltar para a Loja</a>
 </body>

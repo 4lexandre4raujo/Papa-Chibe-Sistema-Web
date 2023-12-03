@@ -42,7 +42,17 @@ $produtos = listaProdutos($conexao);
 foreach ($produtos as $produto) {
 ?>
   <div class="media-element">
-    <img src="./<?= $produto['imagem'] ?? 'img/produto1.png' ?>">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="./<?= $produto['imagem'] ?? 'img/produto1.png' ?>" height="100%" width="100%">
+        </div>
+        <div class="flip-card-back"> 
+          <h1> <?= $produto["nome"] ?> </h1>
+          <p> <?= $produto["ingrediente"] ?> </p>
+        </div>
+      </div>
+    </div>
     <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
     <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
     <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />
@@ -56,7 +66,7 @@ foreach ($produtos as $produto) {
       </button>
       <button class="btn btn-danger">
         <a href="logicaRemoveProduto.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
-          Remover Produto
+          Tornar Indisponível
         </a>
       </button>
       <br>

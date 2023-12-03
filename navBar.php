@@ -35,9 +35,21 @@
             <?php
             if (!funcionarioEstaLogado()) {
                 ?>
-                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidos.php">MEUS PEDIDOS</a>
+                <?php
+                if (!clienteEstaLogado()) {
+                 ?>
+                    <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="loginClienteFormulario.php">MEUS PEDIDOS</a>
+
+                 <?php
+                } else {
+                    ?>
+                    <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidos.php">MEUS PEDIDOS</a>
+                <?php
+                }
+                ?>
             <?php } else { ?>
                 <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="listarPedidosGeral.php">ACOMPANHAR ENTREGA</a>
+                <a class="navbar-brand text-white mb-0 h1" style="font-size:15px" href="produtoIndisponivel.php">PRODUTOS ARQUIVADOS</a>
                 <?php
             }
             ?>
@@ -126,6 +138,9 @@
         h1, h2, h3, h4, td, p, a{
             color: white;
         }
+        th, tr {
+            text-align: center;
+        }
 
         body {
             background-image: url('img/background.png');
@@ -144,6 +159,19 @@
             padding: 20px;
             border: 4px solid #FFB800;
             /* width: 268px; */
+        }
+        .tableprodPed {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0px;
+            border: 4px solid #FFB800;
+            width: 320px;
+        }
+
+        .tableprodPedFunc {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0px;
+            border: 4px solid #FFB800;
+            width: 100%;
         }
 
         .tablelogin {
@@ -180,7 +208,7 @@
             --_spacer: var(--size-3);
             display: grid;
             gap: var(--_spacer);
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             padding: 0 var(--_spacer) var(--_spacer);
             overflow-x: auto;
             overscroll-behavior-inline: contain;
@@ -247,6 +275,64 @@
 
         table {
             text-align: left;
+        }
+
+        .flip-card {
+        background-color: transparent;
+        width: 100%;
+        height: 300px;
+        perspective: 1000px;
+        }
+
+        .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        }
+
+        .flip-card-back {
+        background-color: #9C0000;
+        color: white;
+        transform: rotateY(180deg);
+        }
+
+        /* Designing all grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-column-gap: 50px;
+            grid-row-gap: 50px;
+            padding: 5px;
+        }
+  
+        /* Designing all grid-items */
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
         }
     </style>
 

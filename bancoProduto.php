@@ -12,7 +12,7 @@ function insereProduto($conexao, $nome, $valor, $ingrediente, $imagem, $disponib
 function listaProdutos($conexao)
 {
 	$produtos = array();
-	$query = "select cdproduto, nome, valor, imagem from tb_produto;";
+	$query = "select cdproduto, nome, ingrediente, valor, imagem from tb_produto where disponibilidade = true";
 	$result = mysqli_query($conexao, $query);
 
 	while ($produto = mysqli_fetch_assoc($result)) {
@@ -24,10 +24,27 @@ function listaProdutos($conexao)
 
 
 //Função para excluir o produto
-function removeProduto($conexao, $cdproduto)
+function arquivaProduto($conexao, $cdproduto)
 {
-	$query = "delete from tb_produto where cdproduto={$cdproduto}";
+	$query = "update tb_produto SET disponibilidade = false WHERE cdproduto = {$cdproduto}";
 	return mysqli_query($conexao, $query);
+}
+function disponibilizaProduto($conexao, $cdproduto)
+{
+	$query = "update tb_produto SET disponibilidade = true WHERE cdproduto = {$cdproduto}";
+	return mysqli_query($conexao, $query);
+}
+function arquivadoProduto($conexao)
+{
+	$produtos = array();
+	$query = "select cdproduto, nome, ingrediente, valor, imagem from tb_produto where disponibilidade = false";
+	$result = mysqli_query($conexao, $query);
+
+	while ($produto = mysqli_fetch_assoc($result)) {
+		array_push($produtos, $produto);
+	}
+
+	return $produtos;
 }
 
 //Função para buscar um produto
@@ -75,7 +92,7 @@ function alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $image
 }
 
 function listaProdutosPorCategoria($conexao, $categoria_id) {
-    $query = "SELECT * FROM tb_produto WHERE categoriaid = {$categoria_id}";
+    $query = "SELECT * FROM tb_produto WHERE categoriaid = {$categoria_id} and disponibilidade = true";
     $resultado = mysqli_query($conexao, $query);
 
     if (!$resultado) {

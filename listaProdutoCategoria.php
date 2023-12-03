@@ -22,7 +22,7 @@ if(isset($_POST['categoriaid'])) {
             <div class="tableprod">
             <form method="post" action="adicionaCarrinho.php">
                 
-                <img class="imagem_produto" width='150" src="<?= $produto['imagem'] ?>">
+                <img class="imagem_produto" width="150" src="<?= $produto['imagem'] ?>">
                 
                 <p class="title" style="font-size: 30px; color: white;">
                     <?= $produto["nome"] ?>
@@ -52,7 +52,7 @@ if(isset($_POST['categoriaid'])) {
             </button>
             <button class="btn btn-danger">
                 <a href="logicaRemoveProduto.php?cdproduto=<?= $produto['cdproduto'] ?>" style="color: white">
-                Remover Produto
+                Tornar Indisponível
                 </a>
             </button>
             <br>

@@ -12,7 +12,7 @@ $disponibilidade = $produto['disponibilidade'] ? "checked='checked'" : "";
 ?>
 
 <h1>Alteração de Produto</h1>
-<form action="logicaAlteraProduto.php" method="post" enctype="multipart/form-data">>
+<form action="logicaAlteraProduto.php" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
 	<table class="table">
 		<tr>

@@ -4,8 +4,8 @@ include("bancoProduto.php");
 include("logicaAcessoUsuario.php");
 
 $cdproduto = $_GET['cdproduto'];
-arquivaProduto($conexao, $cdproduto);
-$_SESSION["success"] = "Produto arquivado com sucesso!";
+disponibilizaProduto($conexao, $cdproduto);
+$_SESSION["success"] = "Produto disponível com sucesso!";
 header("Location: index.php");
 die();
 
