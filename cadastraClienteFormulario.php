@@ -33,13 +33,13 @@ include("bancoUsuario.php");
 								placeholder="(00) 00000-0000"></td>
 					</tr>
 					<tr>
-						<td>Email: </td>
+						<td>E-mail: </td>
 						<td><input class="form-control" required type="email" name="email" placeholder="nome@email.com">
 						</td>
 					</tr>
 					<tr>
-						<td>senha: </td>
-						<td><input class="form-control" required type="password" name="senha"></td>
+						<td>Senha: </td>
+						<td><input class="form-control" required type="password" name="senha" placeholder="insira sua senha"></td>
 					</tr>
 
 					<tr>

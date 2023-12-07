@@ -21,7 +21,7 @@ if(isset($_POST['categoriaid'])) {
             
             <div class="tableprod">
             <form method="post" action="adicionaCarrinho.php">
-                
+                <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
                 <img class="imagem_produto" width="150" src="<?= $produto['imagem'] ?>">
                 
                 <p class="title" style="font-size: 30px; color: white;">

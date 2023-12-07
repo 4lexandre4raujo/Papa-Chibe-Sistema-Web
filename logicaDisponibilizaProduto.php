@@ -6,7 +6,7 @@ include("logicaAcessoUsuario.php");
 $cdproduto = $_GET['cdproduto'];
 disponibilizaProduto($conexao, $cdproduto);
 $_SESSION["success"] = "Produto disponível com sucesso!";
-header("Location: index.php");
+header("Location: produtoIndisponivel.php");
 die();
 
 ?>

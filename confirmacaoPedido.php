@@ -10,8 +10,8 @@ include("navBar.php");
 </head>
 
 <body>
-    <h2 style="color: white;">Pedido Confirmado</h2>
-    <p style="color: white;">O seu pedido foi recebido com sucesso. Em breve entraremos em contato para confirmar os detalhes da entrega.</p>
+    <h2 style="color: white;">Solicitação enviada</h2>
+    <p style="color: white;">O status do seu pedido será atualizado em breve.</p>
     <a href="listarPedidos.php">Voltar para listagem de pedidos</a>
 </body>
 

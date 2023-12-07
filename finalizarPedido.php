@@ -6,6 +6,8 @@ include("logicaAcessoUsuario.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $endereco = $_POST['endereco'];
     $telefone = $_POST['telefone'];
+    $metodo_pagamento = $_POST['metodo_pagamento'];
+    $troco = $_POST['troco'];
     $cdcliente = clienteCd();
 
     $total = 0;
@@ -14,8 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $total += $subtotal;
     }
 
-    $insertPedido = $conexao->prepare("INSERT INTO tb_pedido (endereco, telefone, total, usuario) VALUES (?, ?, ?, ?)");
-    $insertPedido->bind_param("ssdi", $endereco, $telefone, $total, $cdcliente);
+    $insertPedido = $conexao->prepare("INSERT INTO tb_pedido (endereco, telefone, metodo_pagamento, total, troco, usuario) VALUES (?, ?, ?, ?, ?, ?)");
+    $insertPedido->bind_param("sssddi", $endereco, $telefone, $metodo_pagamento, $total, $troco, $cdcliente);
     $insertPedido->execute();
     $pedido_id = $conexao->insert_id;
 
