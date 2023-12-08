@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    
     <?php
     include("logicaAcessoUsuario.php");
     ?>
@@ -126,7 +126,6 @@
     </nav>
     <!-- Fim da Barra de navegação -->
 
-
     <style type="text/css">
         .mb-4 {
             font-family: 'Lato', sans-serif;
@@ -140,10 +139,15 @@
         }
         th, tr {
             text-align: center;
+            padding: 15px;
         }
 
         body {
             background-image: url('img/background.png');
+        }
+
+        .container {
+            max-width: 1300px !important;
         }
 
         .infprod {
@@ -161,14 +165,18 @@
             /* width: 268px; */
         }
         .tableprodPed {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(80, 80, 80);
             padding: 0px;
             border: 4px solid #FFB800;
-            width: 320px;
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
         }
 
         .tableprodPedFunc {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(80, 80, 80);
             padding: 0px;
             border: 4px solid #FFB800;
             width: 100%;

@@ -10,49 +10,49 @@ $valor = $_POST["valor"];
 $ingrediente = $_POST["ingrediente"];
 $categoriaid = $_POST["categoriaid"];
 
-// File Upload
+// arquivo upado
 $targetDir = "uploads/";
 $targetFile = $targetDir . basename($_FILES["imagem"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-// Check if the file is an image
+// checar se o arquivo é uma imagem
 $check = getimagesize($_FILES["imagem"]["tmp_name"]);
 if ($check === false) {
     echo "File is not an image.";
     $uploadOk = 0;
 }
 
-// Check file size
+// checar tamanho do arquivo
 if ($_FILES["imagem"]["size"] > 5000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
-// Allow only certain file formats
+// permitir apenas alguns formatos de arquivo
 $allowedExtensions = ["jpg", "jpeg", "png", "gif", "jfif"];
 if (!in_array($imageFileType, $allowedExtensions)) {
-    echo "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
+    echo "Desculpe, only JPG, JPEG, PNG, e GIF arquivos são permitidos.";
     $uploadOk = 0;
 }
 
-// Check if $uploadOk is set to 0 by an error
+// verifica se o $upload ta definido com 0 por um erro
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 } else {
-    // Try to upload the file
+    // Tente fazer o upload do arquivo
     if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $targetFile)) {
-        // File uploaded successfully, save the image path in the database
+        // Arquivo carregado com sucesso, salve o caminho da imagem no banco de dados
         $imagemPath = $targetFile;
         
-        // Check disponibilidade
+        // Checar disponibilidade
         if (array_key_exists('disponibilidade', $_POST)) {
             $disponibilidade = "true";
         } else {
             $disponibilidade = "false";
         }
 
-        // Insert the product into the database
+        // Insira o produto no banco de dados
         if (insereProduto($conexao, $nome, $valor, $ingrediente, $imagemPath, $disponibilidade, $categoriaid)) {
             ?>
             <p class="text-success">
@@ -73,7 +73,7 @@ if ($uploadOk == 0) {
     }
 }
 
-// Display links to create a new product or view the product list
+// Exibir links para criar um novo produto ou visualizar a lista de produtos
 ?>
 <div align="center">
     <a href="produtoFormulario.php"><button class="btn btn-primary">Criar Novo</button></a>

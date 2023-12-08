@@ -14,7 +14,7 @@ if (cadastraCliente($conexao, $nome, $sobrenome, $telefone, $email, $senha)) {
 	?>
 
 	<p class="text-success">
-		Cliente
+		Clientes
 		<?= $nome ?>
 		<?= $sobrenome ?>, cadastrado com sucesso!
 	</p>

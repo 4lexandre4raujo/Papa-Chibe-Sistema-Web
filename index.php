@@ -54,9 +54,9 @@ foreach ($produtos as $produto) {
       </div>
     </div>
     <input type="hidden" name="cdproduto" value="<?= $produto['cdproduto'] ?>">
-    <input readonly class="title" name="nome_produto" value="<?= $produto["nome"] ?>" />
-    <input readonly class="title" name="preco" value="<?= $produto["valor"] ?>" />
-    <?php
+    <label> <?= $produto["nome"] ?></label>
+    <label> <?= $produto["valor"] ?></label>
+   <?php
     if (funcionarioEstaLogado()) {
     ?>
       <button class="btn btn-danger">

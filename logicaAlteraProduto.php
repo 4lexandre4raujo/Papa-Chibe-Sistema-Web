@@ -9,49 +9,49 @@ $valor = $_POST["valor"];
 $ingrediente = $_POST["ingrediente"];
 $categoriaid = $_POST["categoriaid"];
 
-// Check disponibilidade
+// checar a disponibilidade
 if (array_key_exists('disponibilidade', $_POST)) {
     $disponibilidade = "true";
 } else {
     $disponibilidade = "false";
 }
 
-// File Upload
+// upload de arquivo
 $targetDir = "uploads/";
 $targetFile = $targetDir . basename($_FILES["imagem"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-// Check if the file is an image
+// verifica se o arquivo é de imagem
 $check = getimagesize($_FILES["imagem"]["tmp_name"]);
 if ($check === false) {
-    echo "File is not an image.";
+    echo "Este arquivo não é uma imagem.";
     $uploadOk = 0;
 }
 
-// Check file size
+// checando o tamanho do arquivo
 if ($_FILES["imagem"]["size"] > 5000000) {
-    echo "Sorry, your file is too large.";
+    echo "Desculpe, seu arquivo é muito grande.";
     $uploadOk = 0;
 }
 
-// Allow only certain file formats
+// pemitir apenas os formatos jpg, jpeg, png e gifs
 $allowedExtensions = ["jpg", "jpeg", "png", "gif", "jfif"];
 if (!in_array($imageFileType, $allowedExtensions)) {
-    echo "Sorry, only JPG, JPEG, PNG, and GIF files are allowed.";
+    echo "Desculpe, apenas JPG, JPEG, PNG, e arquivos GIF são permitidos.";
     $uploadOk = 0;
 }
 
-// Check if $uploadOk is set to 0 by an error
+// verifica se o $upload ta definido com 0 por um erro
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    echo "Desculpe, seu arquivo não foi enviado.";
 } else {
-    // Try to upload the file
+    // Tente fazer o upload do arquivo
     if (move_uploaded_file($_FILES["imagem"]["tmp_name"], $targetFile)) {
-        // File uploaded successfully, save the image path in the database
+        // Arquivo carregado com sucesso, salve o caminho da imagem no banco de dados
         $imagemPath = $targetFile;
 
-        // Update the product in the database with the new image path
+        // Atualize o produto no banco de dados com o novo caminho da imagem
         if (alteraProduto($conexao, $cdproduto, $nome, $valor, $ingrediente, $imagemPath, $disponibilidade, $categoriaid)) {
             ?>
             <p class="text-success">
@@ -68,11 +68,11 @@ if ($uploadOk == 0) {
             <?php
         }
     } else {
-        echo "Sorry, there was an error uploading your file.";
+        echo "Desculpe, ocorreu um erro ao enviar seu arquivo.";
     }
 }
 
-// Display links to go back to the product list
+// Exibir links para voltar à lista de produtos
 ?>
 <div align="center">
     <a href="index.php"><button class="btn btn-primary">Ver Lista</button></a>

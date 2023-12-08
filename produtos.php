@@ -29,7 +29,7 @@ include("navBar.php");
                 </td>
             </tr>
 
-            <!-- Adicione mais produtos conforme necessário -->
+            
         </table>
     </form>
 </body>
