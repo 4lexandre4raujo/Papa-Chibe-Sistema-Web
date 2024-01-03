@@ -93,7 +93,7 @@ include("navBar.php");
         <?php if(clienteEstaLogado()): ?>
             <form action="processarPagamento.php" method="post">
     <input type="hidden" name="pedido_id" value="<?php echo $pedido_id; ?>">
-    <h2 style="color: white;">Finalizar Pedido</h2>
+    <h2 style="color: white;" >Finalizar Pedido</h2>
     <label for="metodo_pagamento" style="color: white;">Escolha o método de pagamento:</label>
     <select id="metodo_pagamento" onchange="changeTroco()" name="metodo_pagamento" required>
         <option value="Cartão de Crédito">Cartão de Crédito</option>
