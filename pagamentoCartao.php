@@ -3,6 +3,8 @@ include("navBar.php");
 include("conexao.php");
 include("bancoUsuario.php");
 include("bancoProduto.php");
+include("confApiCard.php");
+include("util.php");
 
 if (isset($_SESSION["success"])) { ?>
   <p class="alert-success">
@@ -12,6 +14,18 @@ if (isset($_SESSION["success"])) { ?>
 ?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<?php 
+        $params = array(
+            'email' => $PAGSEGURO_EMAIL,
+            'token' => $PAGSEGURO_TOKEN
+        );
+        $header = array();
+
+        $response = curlExec($PAGSEGURO_API_URL."/sessions", $params, $header);
+        $json = json_decode(json_encode(simplexml_load_string($response)));
+        $sessionCode = $json->id;
+    ?>
+    
 <div class="container">
 <div class="row">
     
